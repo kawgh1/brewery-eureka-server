@@ -18,7 +18,7 @@
 		3. Once the microservice instance is "discovered", the API Gateway can start routing Client traffic to it
 		4. A behind the scenes software load balancer called **Ribbon** may be present to balance traffic to microservice nodes behind the Gateway API
 
-- ### Service Registration
+- ### Microservice Registration
 
 	- Spring Boot provides a Spring Boot Starter for a Eureka Server
 	- Spring Boot also provides a starter for Eureka Clients(microservices)
@@ -26,7 +26,7 @@
 	- Import to configure microservice name in application.properties
 		- This is the value used to lookup the microservice in Eureka
 
-- ### Service Discovery
+- ### Microservice Discovery
 	- **Spring Cloud Open Feign** allows for easy service discovery **between** microservices
 		- Works in connection with Eureka and Ribbon
 	- Spring Cloud Gateway can be configured to lookup services in Eureka
