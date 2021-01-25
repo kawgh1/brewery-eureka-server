@@ -1,4 +1,4 @@
-
+![eureka server diagram](https://raw.githubusercontent.com/kawgh1/brewery-eureka-server/master/eureka-diagram1.png)
 
 ### API Gateways
 - #### What's happening in the background
