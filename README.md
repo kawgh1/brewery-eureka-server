@@ -1,3 +1,5 @@
+![eureka server diagram](https://raw.githubusercontent.com/kawgh1/brewery-eureka-server/master/eureka-diagram.png)
+
 ### API Gateways
 - #### What's happening in the background
     - Behind the Gateway we may or may not have **Load Balancers**
