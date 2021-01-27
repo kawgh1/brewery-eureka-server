@@ -22,6 +22,13 @@
     </properties>
 
     <dependencies>
+        <!--        sleuth / zipkin logging trace see resources/logback-spring.xml-->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.3</version>
+        </dependency>
+<!--        eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
