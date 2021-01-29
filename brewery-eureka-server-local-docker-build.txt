@@ -1,0 +1,71 @@
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------< com.kwgdev:brewery-eureka-server >------------------
+[INFO] Building brewery-eureka-server 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- docker-maven-plugin:0.33.0:build (default-cli) @ brewery-eureka-server ---
+[INFO] Copying files to C:\Users\----\IdeaProjects\brewery-eureka-server\target\docker\<docker-username>\brewery-eureka-server\build\maven
+[INFO] Building tar: C:\Users\----\IdeaProjects\brewery-eureka-server\target\docker\<docker-username>\brewery-eureka-server\tmp\docker-build.tar
+[INFO] DOCKER> [krseven/brewery-eureka-server:latest] "brewery-eureka-server": Created docker-build.tar in 3 seconds
+[INFO] DOCKER> Step 1/13 : FROM openjdk:11-jre-slim as builder
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 2/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 3e6956397948
+[INFO] DOCKER> Step 3/13 : ADD maven/brewery-eureka-server-0.0.1-SNAPSHOT.jar brewery-eureka-server-0.0.1-SNAPSHOT.jar
+[INFO] DOCKER>
+[INFO] DOCKER> ---> 289f8a056aa8
+[INFO] DOCKER> Step 4/13 : RUN java -Djarmode=layertools -jar brewery-eureka-server-0.0.1-SNAPSHOT.jar extract
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in 03fb39c716a5
+[INFO] DOCKER> Removing intermediate container 03fb39c716a5
+[INFO] DOCKER> ---> 6192ebfebe58
+[INFO] DOCKER> Step 5/13 : FROM openjdk:11-jre-slim
+[INFO] DOCKER>
+[INFO] DOCKER> ---> ff68ba8d72c9
+[INFO] DOCKER> Step 6/13 : LABEL PROJECT_NAME=brewery-eureka-server       PROJECT=com.kwgdev:brewery-eureka-server:jar:0.0.1-SNAPSHOT
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 4a436679b65e
+[INFO] DOCKER> Step 7/13 : EXPOSE 8080
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 0e1c41143ddb
+[INFO] DOCKER> Step 8/13 : WORKDIR application
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 4e3e7c2c056d
+[INFO] DOCKER> Step 9/13 : COPY --from=builder application/dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> b1f10d15a134
+[INFO] DOCKER> Step 10/13 : COPY --from=builder application/spring-boot-loader/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> d5a3416d0441
+[INFO] DOCKER> Step 11/13 : COPY --from=builder application/snapshot-dependencies/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Using cache
+[INFO] DOCKER> ---> 14bcc98f9bc5
+[INFO] DOCKER> Step 12/13 : COPY --from=builder application/application/ ./
+[INFO] DOCKER>
+[INFO] DOCKER> ---> d178f45c9738
+[INFO] DOCKER> Step 13/13 : ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "org.springframework.boot.loader.JarLauncher"]
+[INFO] DOCKER>
+[INFO] DOCKER> ---> Running in ecb9a24f62b0
+[INFO] DOCKER> Removing intermediate container ecb9a24f62b0
+[INFO] DOCKER> ---> 9f978c96eafb
+[INFO] DOCKER> Successfully built 9f978c96eafb
+[INFO] DOCKER> Successfully tagged <docker-username>/brewery-eureka-server:latest
+[INFO] DOCKER> [<docker-username>/brewery-eureka-server:latest] "brewery-eureka-server": Built image sha256:9f978
+[INFO] DOCKER> [<docker-username>/brewery-eureka-server:latest] "brewery-eureka-server": Removed old image sha256:e2208
+[INFO] DOCKER> [<docker-username>/brewery-eureka-server:latest] "brewery-eureka-server": Tag with latest,0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.752 s
+[INFO] Finished at: 2021-01-28T23:42:36-06:00
+[INFO] ------------------------------------------------------------------------
